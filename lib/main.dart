@@ -48,6 +48,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+  Size size = MediaQuery.of(context).size;
+  double hauteurEcranCalc = 250.0;
+  double largeurCase = size.width / 4;
+  double hauteurCase = (size.height - hauteurEcranCalc) / 5;
+
     return Scaffold(
       body: GestureDetector(
         onTapDown: (_) {
@@ -59,8 +65,8 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Row(children: [
                 Container(
-                  width:320,
-                  height:100,
+                  width:size.width,
+                  height:hauteurEcranCalc,
                   padding: EdgeInsets.symmetric(horizontal: 15),
                   alignment: Alignment.centerRight,
                   color: Colors.black87,
@@ -76,13 +82,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ]),
               Row(children: [
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'AC', color: colorFirstRow, f : () { setState(() { this.result = "0"; });}),
                 ),
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'+/-', color: colorFirstRow, f : () { setState(() { 
 
                     if(result.length == 1 && result == '0') //si c'est 0 qui est affiché à l'écran on vide
@@ -100,8 +106,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   }),
                 ),
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'%', color: colorFirstRow, f : () { setState(() { 
 
                     result = (double.parse(result) / 100).toString();
@@ -110,8 +116,8 @@ class _MyHomePageState extends State<MyHomePage> {
                    });}),
                 ),
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'/', color: colorLastCol, f : () { setState(() { 
                     
                     operator = "/";
@@ -125,8 +131,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Row(children: [
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'7', color: colorSimpleCase, f : () { setState(() { 
                     
                     if(clearResult == true){
@@ -144,8 +150,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   }),
                 ),
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'8', color: colorSimpleCase, f : () { setState(() { 
                     
                     if(clearResult == true){
@@ -162,8 +168,8 @@ class _MyHomePageState extends State<MyHomePage> {
                    });}),
                 ),
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'9', color: colorSimpleCase, f : () { setState(() { 
 
                     if(clearResult == true){
@@ -180,8 +186,8 @@ class _MyHomePageState extends State<MyHomePage> {
                    });}),
                 ),
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'x', color: colorLastCol, f : () { setState(() { 
 
                     operator = "x";
@@ -195,8 +201,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Row(children: [
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'4', color: colorSimpleCase, f : () { setState(() { 
 
                     if(clearResult == true){
@@ -213,8 +219,8 @@ class _MyHomePageState extends State<MyHomePage> {
                    });}),
                 ),
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'5', color: colorSimpleCase, f : () { setState(() { 
 
                     if(clearResult == true){
@@ -231,8 +237,8 @@ class _MyHomePageState extends State<MyHomePage> {
                    });}),
                 ),
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'6', color: colorSimpleCase, f : () { setState(() { 
 
                     if(clearResult == true){
@@ -249,8 +255,8 @@ class _MyHomePageState extends State<MyHomePage> {
                    });}),
                 ),
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'-', color: colorLastCol, f : () { setState(() { 
  
                     operator = "-";
@@ -263,8 +269,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Row(children: [
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'1', color: colorSimpleCase, f : () { setState(() { 
 
                     if(clearResult == true){
@@ -281,8 +287,8 @@ class _MyHomePageState extends State<MyHomePage> {
                    });}),
                 ),
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'2', color: colorSimpleCase, f : () { setState(() { 
 
                     if(clearResult == true){
@@ -299,8 +305,8 @@ class _MyHomePageState extends State<MyHomePage> {
                    });}),
                 ),
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'3', color: colorSimpleCase, f : () { setState(() { 
 
                     if(clearResult == true){
@@ -317,8 +323,8 @@ class _MyHomePageState extends State<MyHomePage> {
                    });}),
                 ),
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'+', color: colorLastCol, f : () { setState(() { 
  
                     operator = "+";
@@ -331,8 +337,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Row(children: [
                 SizedBox(
-                  width: 160.0,
-                  height:70.0,
+                  width: largeurCase * 2,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :'0', color: colorSimpleCase, f : () { setState(() { 
 
                     if(clearResult == true){
@@ -350,8 +356,8 @@ class _MyHomePageState extends State<MyHomePage> {
                    });}),
                 ),
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child:  ButtonCalc(key: UniqueKey(),text :',', color: colorSimpleCase, f : () { setState(() { 
 
                     if(clearResult == true){
@@ -366,8 +372,8 @@ class _MyHomePageState extends State<MyHomePage> {
                    });}),
                 ),
                 SizedBox(
-                  width: 80.0,
-                  height:70.0,
+                  width: largeurCase,
+                  height: hauteurCase,
                   child: ButtonCalc(key: UniqueKey(),text :'=', color: colorLastCol, f : () { setState(() { 
 
                     var num1 = double.parse(firstOperand);
