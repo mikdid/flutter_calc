@@ -1,6 +1,6 @@
 # mikdid_calc
 
-A new Flutter project.
+Simple Calculator project
 
 ## Getting Started
 
